@@ -34,7 +34,7 @@ public class SocietyRepositoryImpl implements MongoSocietyRepository {
     }*/
 
     public List<Society> findSociety(String society){
-        return mongoOperations.find(new Query(Criteria.where("name").is(society)), Society.class, "society");
+        return mongoOperations.find(new Query(Criteria.where("name").is(society)), Society.class, society);
     }
 
     public void addUpdateEmployee(String society, String direction, String department, String nomEmployee, Employee employee, String collection){
